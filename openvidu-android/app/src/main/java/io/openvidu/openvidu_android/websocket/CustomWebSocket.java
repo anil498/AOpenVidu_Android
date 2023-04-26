@@ -83,6 +83,8 @@ public class CustomWebSocket extends AsyncTask<SessionActivity, Void, Void> impl
     private AtomicInteger ID_JOINROOM = new AtomicInteger(-1);
     private AtomicInteger ID_LEAVEROOM = new AtomicInteger(-1);
     private AtomicInteger ID_PUBLISHVIDEO = new AtomicInteger(-1);
+    private AtomicInteger ID_UNPUBLISHVIDEO = new AtomicInteger(-1);
+
     private Map<Integer, Pair<String, String>> IDS_PREPARERECEIVEVIDEO = new ConcurrentHashMap<>();
     private Map<Integer, String> IDS_RECEIVEVIDEO = new ConcurrentHashMap<>();
     private Set<Integer> IDS_ONICECANDIDATE = Collections.newSetFromMap(new ConcurrentHashMap<>());
@@ -121,7 +123,7 @@ public class CustomWebSocket extends AsyncTask<SessionActivity, Void, Void> impl
 
         } else if (rpcId == this.ID_JOINROOM.get()) {
             // Response to joinRoom
-            activity.viewToConnectedState();
+                        //mychange  activity.viewToConnectedState();
 
             final LocalParticipant localParticipant = this.session.getLocalParticipant();
             final String localConnectionId = result.getString(JsonConstants.ID);
@@ -238,6 +240,7 @@ public class CustomWebSocket extends AsyncTask<SessionActivity, Void, Void> impl
 
     public void leaveRoom() {
         this.ID_LEAVEROOM.set(this.sendJson(JsonConstants.LEAVEROOM_METHOD));
+
     }
 
     public void publishVideo(SessionDescription sessionDescription) {
@@ -252,6 +255,19 @@ public class CustomWebSocket extends AsyncTask<SessionActivity, Void, Void> impl
         publishVideoParams.put("videoDimensions", "{\"width\":320, \"height\":240}");
         publishVideoParams.put("sdpOffer", sessionDescription.description);
         this.ID_PUBLISHVIDEO.set(this.sendJson(JsonConstants.PUBLISHVIDEO_METHOD, publishVideoParams));
+    }
+//    {
+//        "id": 7,
+//            "jsonrpc": "2.0",
+//            "method": "unpublishVideo",
+//            "params": {}
+//    }
+
+    public  void unpublishVideo()
+    {
+        Log.d("anil", "unpublishVideo: run in custonsocket");
+        Map<String, String> unpublishVideoParams = new HashMap<>();
+        this.ID_UNPUBLISHVIDEO.set(this.sendJson(JsonConstants.UNPUBLISHVIDEO_METHOD, unpublishVideoParams));
     }
 
     public void prepareReceiveVideoFrom(RemoteParticipant remoteParticipant, String streamId) {
@@ -307,6 +323,9 @@ public class CustomWebSocket extends AsyncTask<SessionActivity, Void, Void> impl
                 break;
             case JsonConstants.PARTICIPANT_PUBLISHED:
                 participantPublishedEvent(params);
+                break;
+            case JsonConstants.PARTICIPANT_UNPUBLISHED:
+                participantUnPublishedEvent(params);
                 break;
             case JsonConstants.PARTICIPANT_LEFT:
                 participantLeftEvent(params);
@@ -394,6 +413,10 @@ public class CustomWebSocket extends AsyncTask<SessionActivity, Void, Void> impl
         final RemoteParticipant remoteParticipant = this.session.getRemoteParticipant(remoteParticipantId);
         final String streamId = params.getJSONArray("streams").getJSONObject(0).getString("id");
         this.subscribe(remoteParticipant, streamId);
+    }
+    private void participantUnPublishedEvent(JSONObject params) throws
+            JSONException {
+        Log.d("anil", "participantUnPublishedEvent: run by anil");
     }
 
     private void participantLeftEvent(JSONObject params) throws JSONException {

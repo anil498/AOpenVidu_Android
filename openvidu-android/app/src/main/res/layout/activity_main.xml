@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!--
+<!-androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,116 +13,259 @@
         android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <!-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:id="@+id/scrollView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
 
-            <LinearLayout
-                android:id="@+id/views_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:orientation="vertical"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+<!--  <LinearLayout
+      android:id="@+id/views_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginLeft="8dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginRight="8dp"
+      android:orientation="vertical"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
 
-                <FrameLayout
-                    android:id="@+id/peer_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="212dp"
-                    android:layout_marginBottom="5dp">
 
-                    <TextView
-                        android:id="@+id/main_participant"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorAccent" />
 
-                    <org.webrtc.SurfaceViewRenderer
-                        android:id="@+id/local_gl_surface_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="212dp"
-                        android:visibility="visible" />
-                </FrameLayout>
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
+      <FrameLayout
+          android:id="@+id/peer_container"
+          android:layout_width="match_parent"
+          android:layout_height="500dp"
+          android:layout_weight="1"
+          android:background="@color/colorAccent"
+          android:layout_marginBottom="0dp">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
+          <TextView
+              android:id="@+id/main_participant"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@color/colorAccent" />
+
+          <org.webrtc.SurfaceViewRenderer
+              android:id="@+id/local_gl_surface_view"
+              android:layout_width="match_parent"
+              android:layout_height="100dp"
+              android:visibility="visible" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:id="@+id/peer_container2"
+          android:layout_width="match_parent"
+          android:layout_height="1500dp"
+          android:layout_weight="1"
+          android:layout_marginBottom="0dp">
+
+          <TextView
+              android:id="@+id/main_participant2"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@color/colorAccent" />
+
+          <org.webrtc.SurfaceViewRenderer
+              android:id="@+id/local_gl_surface_view2"
+              android:layout_width="match_parent"
+              android:layout_height="25dp"
+              android:visibility="visible" />
+      </FrameLayout>
+
+
+      <TextView
+          android:id="@+id/textView6"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="#E80C0C"
+          android:text="TextView"
+          android:textSize="34sp" />
+
+      <TextView
+          android:id="@+id/textView7"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="#7CEF18"
+          android:text="TextView"
+          android:textSize="34sp" />
+  </LinearLayout>
+
+
+<!-        </ScrollView>-->
+<!--</LinearLayout>
+
+<RelativeLayout
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="#ffffff"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+    app:layout_constraintVertical_bias="1.0">
+
+    <Button
+        android:id="@+id/start_finish_call"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="#ffffff"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/start_button" />
+<!-            android:onClick="buttonPressed"-->
 
-        <Button
-            android:id="@+id/start_finish_call"
-            style="@android:style/Widget.Material.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:onClick="buttonPressed"
-            android:text="@string/start_button" />
+
+<!-- <Button
+     android:id="@+id/button"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignTop="@+id/start_finish_call"
+     android:layout_alignBottom="@+id/start_finish_call"
+     android:layout_marginStart="23dp"
+     android:layout_marginTop="4dp"
+     android:layout_marginEnd="22dp"
+     android:layout_marginBottom="-4dp"
+     android:onClick="stopvc"
+     android:layout_toStartOf="@+id/linearLayout"
+     android:layout_toEndOf="@+id/start_finish_call"
+     android:text="vcall" />
+
+ <LinearLayout
+     android:id="@+id/linearLayout"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentEnd="true"
+     android:layout_centerVertical="true"
+     android:layout_marginEnd="10dp"
+     android:gravity="end"
+     android:orientation="vertical"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintLeft_toLeftOf="parent"
+     app:layout_constraintRight_toRightOf="parent">
+
+     <EditText
+         android:id="@+id/application_server_url"
+         style="@android:style/Widget.Material.Button.Borderless.Colored"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:hint="@string/application_server_url"
+         android:inputType="text"
+         android:text="@string/application_server_url" />
+
+     <EditText
+         android:id="@+id/session_name"
+         style="@android:style/Widget.Material.Button.Borderless.Colored"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:hint="@string/session_name"
+         android:inputType="text"
+         android:text="@string/default_session_name" />
+
+     <EditText
+         android:id="@+id/participant_name"
+         style="@android:style/Widget.Material.Button.Borderless.Colored"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:hint="@string/participant_name"
+         android:inputType="text"
+         android:text="@string/default_participant_name" />
+
+ </LinearLayout>
+
+
+</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.openvidu.openvidu_android.activities.SessionActivity">
+
+
+    <LinearLayout
+        android:id="@+id/views_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/footer_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/views_container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:orientation="vertical">
+
+            <org.webrtc.SurfaceViewRenderer
+                android:id="@+id/local_gl_surface_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:id="@+id/views_container_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:orientation="vertical">
+
+            <org.webrtc.SurfaceViewRenderer
+                android:id="@+id/local_gl_surface_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+        </LinearLayout> -->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footer_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/leave_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
-            android:gravity="end"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
+            android:layout_weight="1"
+            android:background="#F20D0D"
+            android:text="Leave Meeting"
+            android:onClick="leaveMeetingPressed"
+            android:textColor="#FCF9F9" />
+    </LinearLayout>
 
-            <EditText
-                android:id="@+id/application_server_url"
-                style="@android:style/Widget.Material.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/application_server_url"
-                android:inputType="text"
-                android:text="@string/application_server_url" />
-
-            <EditText
-                android:id="@+id/session_name"
-                style="@android:style/Widget.Material.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/session_name"
-                android:inputType="text"
-                android:text="@string/default_session_name" />
-
-            <EditText
-                android:id="@+id/participant_name"
-                style="@android:style/Widget.Material.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/participant_name"
-                android:inputType="text"
-                android:text="@string/default_participant_name" />
-
-        </LinearLayout>
-    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
