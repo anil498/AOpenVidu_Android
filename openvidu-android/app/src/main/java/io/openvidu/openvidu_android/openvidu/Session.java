@@ -272,4 +272,14 @@ public class Session {
         this.views_container.removeView(view);
     }
 
+    public void stopVideoCall()
+    {
+        Log.d("anil", "stopVideoCall: run in session");
+        if (websocket != null) {
+            websocket.unpublishVideo();
+
+        }
+        this.localParticipant.dispose();
+    }
+
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "231214906549",
+    "project_id": "openvidu-android-sample",
+    "storage_bucket": "openvidu-android-sample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231214906549:android:56aaec6a6857a7aa0f92fc",
+        "android_client_info": {
+          "package_name": "io.openvidu.openvidu_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231214906549-4rlsh8r3ug5oepupr07tqt4m4s602ope.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsGvMknIdNBYvbmkw_My5T20dZQeLDb1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231214906549-4rlsh8r3ug5oepupr07tqt4m4s602ope.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,6 +2,7 @@ package io.openvidu.openvidu_android.openvidu;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 
 import org.webrtc.AudioSource;
 import org.webrtc.Camera1Enumerator;
@@ -119,6 +120,16 @@ public class LocalParticipant extends Participant {
         if (surfaceTextureHelper != null) {
             surfaceTextureHelper.dispose();
             surfaceTextureHelper = null;
+        }
+    }
+
+    public void stopvideocall()
+    {
+        Log.d("anil", "stopvideocall: run in localparticipant");
+        if (videoTrack != null) {
+            videoTrack.removeSink(localVideoView);
+            videoCapturer.dispose();
+            videoCapturer = null;
         }
     }
 }

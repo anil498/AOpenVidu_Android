@@ -6,6 +6,9 @@ var OpenVidu = require("openvidu-node-client").OpenVidu;
 var cors = require("cors");
 var app = express();
 
+//---------------------------------
+console.log("openvidu index start");
+
 // Environment variable: PORT where the node server is listening
 var SERVER_PORT = process.env.SERVER_PORT || 5000;
 // Environment variable: URL where our OpenVidu server is listening
